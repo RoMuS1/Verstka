@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#0f3460">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Архив - Мотиватор</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Навигация -->
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">
+                <span>🏠</span> Главная
+            </a>
+            <a href="tasks.html" class="nav-link">
+                <span>📝</span> Задачи
+            </a>
+            <a href="archive.html" class="nav-link active">
+                <span>📚</span> Архив
+            </a>
+        </nav>
+
+        <!-- Заголовок -->
+        <header class="header">
+            <h1 class="title">📚 Архив достижений</h1>
+            <p class="subtitle">Все ваши выполненные задачи</p>
+        </header>
+
+        <!-- Статистика архива -->
+        <div class="archive-stats">
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-content">
+                    <div class="stat-number" id="totalCompleted">0</div>
+                    <div class="stat-label">Всего выполнено</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📅</div>
+                <div class="stat-content">
+                    <div class="stat-number" id="completedToday">0</div>
+                    <div class="stat-label">Сегодня</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📈</div>
+                <div class="stat-content">
+                    <div class="stat-number" id="completedThisWeek">0</div>
+                    <div class="stat-label">На этой неделе</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Фильтры архива -->
+        <div class="archive-filters">
+            <div class="filter-group">
+                <label for="dateFilter">Период:</label>
+                <select id="dateFilter" class="filter-select">
+                    <option value="all">Все время</option>
+                    <option value="today">Сегодня</option>
+                    <option value="week">Эта неделя</option>
+                    <option value="month">Этот месяц</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="searchArchive">Поиск:</label>
+                <input type="text" id="searchArchive" placeholder="Поиск по задачам..." class="search-input">
+            </div>
+        </div>
+
+        <!-- Список выполненных задач -->
+        <div class="archive-section">
+            <div class="archive-header">
+                <h2 class="archive-title">Выполненные задачи</h2>
+            <div class="archive-actions">
+                <button class="action-btn" id="markOneFromArchive" title="Отметить одну задачу">
+                    ✅ Одна задача
+                </button>
+                <button class="action-btn" id="exportArchive" title="Экспортировать архив">
+                    📤 Экспорт
+                </button>
+                <button class="action-btn" id="clearArchive" title="Очистить архив">
+                    🗑️ Очистить
+                </button>
+            </div>
+            </div>
+            <div class="archive-list" id="archiveList">
+                <!-- Выполненные задачи будут показаны здесь -->
+            </div>
+        </div>
+
+        <!-- Пустое состояние архива -->
+        <div class="empty-archive" id="emptyArchive">
+            <div class="empty-icon">🏆</div>
+            <h3>Архив пуст</h3>
+            <p>Выполненные задачи появятся здесь</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
