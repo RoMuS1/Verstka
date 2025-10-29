@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Задачи - Мотиватор</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Навигация -->
+        <nav class="navigation">
+            <a href="index.html" class="nav-link">
+                <span>🏠</span> Главная
+            </a>
+            <a href="tasks.html" class="nav-link active">
+                <span>📝</span> Задачи
+            </a>
+            <a href="archive.html" class="nav-link">
+                <span>📚</span> Архив
+            </a>
+        </nav>
+
+        <!-- Заголовок -->
+        <header class="header">
+            <h1 class="title">📝 Управление задачами</h1>
+            <p class="subtitle">Добавляйте, редактируйте и отмечайте задачи</p>
+        </header>
+
+        <!-- Форма добавления задачи -->
+        <div class="add-task-section">
+            <form class="add-task-form" id="addTaskForm">
+                <div class="input-group">
+                    <input type="text" id="taskInput" placeholder="Добавить новую задачу..." required>
+                    <button type="submit" class="add-btn">+</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Фильтры и сортировка -->
+        <div class="filters-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="active">Активные</button>
+                <button class="filter-btn" data-filter="completed">Выполненные</button>
+            </div>
+            <div class="sort-options">
+                <select id="sortSelect" class="sort-select">
+                    <option value="created">По дате создания</option>
+                    <option value="alphabetical">По алфавиту</option>
+                    <option value="status">По статусу</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Список задач -->
+        <div class="tasks-section">
+            <div class="tasks-header">
+                <h2 class="tasks-title">Мои задачи</h2>
+            <div class="tasks-actions">
+                <button class="action-btn" id="markAllCompleted" title="Отметить все как выполненные">
+                    ✅ Все
+                </button>
+                <button class="action-btn" id="markOneCompleted" title="Отметить одну задачу">
+                    ✅ Одна
+                </button>
+                <button class="action-btn" id="clearCompleted" title="Удалить выполненные">
+                    🗑️ Очистить
+                </button>
+            </div>
+            </div>
+            <div class="tasks-list" id="tasksList">
+                <!-- Задачи будут добавляться динамически -->
+            </div>
+        </div>
+
+        <!-- Пустое состояние -->
+        <div class="empty-state" id="emptyState">
+            <div class="empty-icon">📝</div>
+            <h3>Пока нет задач</h3>
+            <p>Добавьте свою первую задачу выше</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
